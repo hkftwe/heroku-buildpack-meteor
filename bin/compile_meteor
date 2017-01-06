@@ -50,9 +50,6 @@ build() {
   (
     head "Building Meteor App Bundle"
     cd $APP_SOURCE
-    head "Starting meteor npm install" 
-    cat package.json
-    meteor npm install --save babel-runtime | indent
 
     head "Removing platforms build" 
     # can't build with these platforms enabled, it looks like
@@ -70,6 +67,8 @@ build() {
     meteor build ../build --directory 2>&1 | indent
     head "Installing App's NPM Dependencies"
     (cd ../build/bundle/programs/server && npm install 2>&1 | indent)
+    head "Starting meteor npm install" 
+    meteor npm install --save babel-runtime | indent
     cd $BUILD_DIR && rm -rf $APP_SOURCE
   )
 }
