@@ -51,6 +51,7 @@ build() {
     head "Building Meteor App Bundle"
     cd $APP_SOURCE
     head "Starting meteor npm install" 
+    cat package.json
     meteor npm install --save babel-runtime | indent
 
     head "Removing platforms build" 
