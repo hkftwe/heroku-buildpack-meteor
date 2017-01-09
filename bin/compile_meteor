@@ -91,6 +91,7 @@ build() {
 fetch_meteor
 pre_build
 build
+post_build
 
 if [ -f $BUILD_DIR/bin/post_compile ] ; then
     head "Running post_compile hook"
