@@ -50,14 +50,14 @@ pre_build() {
     head "starting run pre_build command"
     cd $BUILD_DIR/app_src
     head "Starting meteor npm install" 
-    meteor npm install --save babel-runtime | indent
+    meteor npm install --save babel-runtime bcrypt classnames meteor-node-stubs react react-addons-pure-render-mixin react-dom | indent
 }
 
 post_build() {
     head "starting run post_build command"
     cd $BUILD_DIR/app_src
     head "Starting meteor npm install" 
-    meteor npm install --save babel-runtime | indent
+    meteor npm install --save babel-runtime bcrypt classnames meteor-node-stubs react react-addons-pure-render-mixin react-dom | indent
 }
 
 build() {
