@@ -47,13 +47,15 @@ fetch_meteor() {
 }
 
 pre_build() {
-    head "starting run pre build command"
-    cd $BUILD_DIR
-    ls
-    head "ls app_src"
-    cd app_src
-    ls
-    #cat ../package.json
+    head "starting run pre_build command"
+    cd $BUILD_DIR/app_src
+    head "Starting meteor npm install" 
+    meteor npm install --save babel-runtime | indent
+}
+
+post_build() {
+    head "starting run post_build command"
+    cd $BUILD_DIR/app_src
     head "Starting meteor npm install" 
     meteor npm install --save babel-runtime | indent
 }
