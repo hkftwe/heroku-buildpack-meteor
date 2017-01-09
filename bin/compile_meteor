@@ -76,6 +76,9 @@ build() {
 [ ! -d $BUILD_DIR ] && mkdir $BUILD_DIR
 [ ! -d $CACHE_DIR ] && mkdir $CACHE_DIR
 
+head "setup git setting" | indent
+git config --global http.postBuffer 524288000
+head "starting fetch meteor" | indent
 fetch_meteor
 build
 
