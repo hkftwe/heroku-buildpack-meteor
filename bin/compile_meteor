@@ -49,7 +49,7 @@ fetch_meteor() {
 pre_build() {
     head "starting run pre build command"
     cd $BUILD_DIR
-    package_json
+    cat $(file_contents package.json)
     head "Starting meteor npm install" 
     meteor npm install --save babel-runtime | indent
 }
