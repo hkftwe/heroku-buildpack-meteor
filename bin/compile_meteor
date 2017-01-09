@@ -50,7 +50,8 @@ pre_build() {
     head "starting run pre build command"
     cd $BUILD_DIR
     ls
-    cd ..
+    head "ls app_src"
+    cd app_src
     ls
     #cat ../package.json
     head "Starting meteor npm install" 
